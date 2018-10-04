@@ -16,7 +16,7 @@ router.get('/credit',fetchCreditAccounts);
 router.get('/debit',fetchDebitAccount);
 
 function fetchCreditAccounts(req, res, next){
-    var token = req.headers['x-acces-token'];
+    var token = req.headers['x-access-token'];
 
     jwt.verify(token, config.secret , function(err, decodedObj){
         if (err) 
@@ -44,8 +44,9 @@ function fetchCreditAccounts(req, res, next){
 
 function fetchDebitAccount(req, res){
     let userName = "alice";
+    let debit = "";
     try{
-        let debit = getDebitPath(userName);
+        debit = getDebitPath(userName);
     }
     catch(err)
     {
