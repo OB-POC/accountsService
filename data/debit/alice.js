@@ -24,7 +24,7 @@ module.exports = {
                     "bankId": "Barclays",
                     "accounts": [
                         {
-                            "aaccountType": "PCA",
+                            "accountType": "PCA",
                             "accountNumber": "234567 89012345",
                             "accountTitle": "Platinum Account",
                             "standingInst": 1000,
