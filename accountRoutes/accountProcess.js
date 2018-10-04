@@ -15,11 +15,11 @@ const logger = require('./../applogger');
 router.get('/credit',fetchCreditAccounts);
 router.get('/debit',fetchDebitAccount);
 
-function fetchCreditAccounts(req, res, next){
-    var token = req.headers['x-acces-token'];
-
+function fetchCreditAccounts(req, res){
+    var token = req.headers['x-access-token'];
+    console.log(req.headers, config.secret);
     jwt.verify(token, config.secret , function(err, decodedObj){
-        if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });  
+        if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' }); 
         let username = decodedObj.username;
         try{
             let credit = getCreditPath(userName);
@@ -36,16 +36,24 @@ function fetchCreditAccounts(req, res, next){
     
 }
 
-function fetchDebitAccount(req, res, next){
-    let userName = "alice";
-    try{
-        let debit = getDebitPath(userName);
-    }
-    catch(err)
-    {
-        res.status(500).send("Invalid username");
-    }
-    res.status(200).json(debit);
+function fetchDebitAccount(req, res){
+    var token = req.headers['x-access-token'];
+    jwt.verify(token, config.secret, function(err, decodedObj){
+        if (err){
+            return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });  
+        } 
+        let username = decodedObj.username;
+        try{
+            let debit = getDebitPath(userName);
+        }
+        catch(err)
+        {
+            res.status(500).json({
+                errorMsg: "User data not available"
+            });
+        }
+        res.status(200).json(debit);
+    });
 }
 
 function getCreditPath(userName){

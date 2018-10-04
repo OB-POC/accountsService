@@ -30,7 +30,7 @@ try
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
 
-    app.use("/accounts",accountRoutes)
+    app.use("/accountsService",accountRoutes)
     
     module.exports = app;
 }
