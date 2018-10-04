@@ -1,0 +1,43 @@
+{
+    "username": "alice",
+    "token": "XXXXXXXXXXXXX",
+    "UIN": "XXXX-xxxx",
+    "banks": [
+        {
+            "bankName": "Halifax",
+            "bankId": "HHaalliiffaaxx",
+            "accounts": [
+                {
+                    "accountType": "PCA",
+                    "balance": "5000" ,
+                    "minBalance": "3000",
+                    "interestRate": ""                  
+                }
+            ]
+        },
+        {
+            "bankName": "HDFC",
+            "bankId": "HHDDFFCC",
+            "accounts": [
+                {
+                    "accountType": "PCA",
+                    "balance": "5000" ,
+                    "minBalance": "3000",
+                    "interestRate": ""                     
+                }
+            ]
+        },
+        {
+            "bankName": "HSBC",
+            "bankId": "HHSSBBCC",
+            "accounts": [
+                {
+                    "accountType": "Savings",
+                    "balance": "25000" ,
+                    "minBalance": "5000",
+                    "interestRate": ""                     
+                }
+            ]
+        }
+    ]
+}

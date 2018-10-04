@@ -1,0 +1,9 @@
+{
+    "appenders": {
+        "cheese": { "type": "file", "filename": "application.log" } ,
+        "console": { "type": "console" }
+    },
+    "categories": { 
+        "default": { "appenders": ["cheese","console"], "level": "debug" } 
+    }
+}
