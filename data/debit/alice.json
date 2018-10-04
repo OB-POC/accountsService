@@ -11,6 +11,7 @@
                     "accountType": "PCA",
                     "balance": "5000" ,
                     "minBalance": "3000",
+                    "standingInst" : "2000",
                     "interestRate": ""                  
                 }
             ]
@@ -23,6 +24,7 @@
                     "accountType": "PCA",
                     "balance": "5000" ,
                     "minBalance": "3000",
+                    "standingInst" : "2000",
                     "interestRate": ""                     
                 }
             ]
@@ -35,6 +37,7 @@
                     "accountType": "Savings",
                     "balance": "25000" ,
                     "minBalance": "5000",
+                    "standingInst" : "2000",
                     "interestRate": ""                     
                 }
             ]

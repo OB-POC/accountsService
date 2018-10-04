@@ -19,10 +19,16 @@ function fetchCreditAccounts(req, res, next){
     var token = req.headers['x-acces-token'];
 
     jwt.verify(token, config.secret , function(err, decodedObj){
-        if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });  
+        if (err) 
+        {
+            return res.status(500).send({ 
+                auth: false, message: 'Failed to authenticate token.' 
+            })
+        };
         let username = decodedObj.username;
+        let credit;
         try{
-            let credit = getCreditPath(userName);
+            credit = getCreditPath(userName);
         }
         catch(err)
         {
@@ -36,7 +42,7 @@ function fetchCreditAccounts(req, res, next){
     
 }
 
-function fetchDebitAccount(req, res, next){
+function fetchDebitAccount(req, res){
     let userName = "alice";
     try{
         let debit = getDebitPath(userName);
