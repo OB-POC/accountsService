@@ -1,7 +1,7 @@
 {
     "username": "alice",
-    "token": "XXXXXXXXXXXXX",
-    "UIN": "XXXX-xxxx",
+    "password": "wonderland",
+    "UIN": "UIN-xxxx",
     "banks": [
         {
             "bankName": "Barclays",

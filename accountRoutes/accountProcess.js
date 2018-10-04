@@ -6,6 +6,8 @@
 var express = require("express");
 var fs = require("fs");
 var path = require("path");
+var jwt = require('jsonwebtoken');
+var config = require('../config')
 
 var router = express.Router();
 const logger = require('./../applogger');
@@ -13,20 +15,28 @@ const logger = require('./../applogger');
 router.get('/credit',fetchCreditAccounts);
 router.get('/debit',fetchDebitAccount);
 
-function fetchCreditAccounts(req,res){
-    let userName = "alice";
-    try{
-        let credit = getCreditPath(userName);
-    }
-    catch(err)
-    {
-        res.status(500).send("Invalid username");
-    }
+function fetchCreditAccounts(req, res, next){
+    var token = req.headers['x-acces-token'];
+
+    jwt.verify(token, config.secret , function(err, decodedObj){
+        if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });  
+        let username = decodedObj.username;
+        try{
+            let credit = getCreditPath(userName);
+        }
+        catch(err)
+        {
+            res.status(500).json({
+                errorMsg: 'User data not available'
+            });
+        }
+        
+        res.status(200).json(credit);
+    });
     
-    res.status(200).json(credit);
 }
 
-function fetchDebitAccount(req,res){
+function fetchDebitAccount(req, res, next){
     let userName = "alice";
     try{
         let debit = getDebitPath(userName);
