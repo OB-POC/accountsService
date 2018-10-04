@@ -25,7 +25,7 @@ function fetchCreditAccounts(req, res, next){
                 auth: false, message: 'Failed to authenticate token.' 
             })
         };
-        let username = decodedObj.username;
+        let userName = decodedObj.username;
         let credit;
         try{
             credit = getCreditPath(userName);
@@ -36,7 +36,6 @@ function fetchCreditAccounts(req, res, next){
                 errorMsg: 'User data not available'
             });
         }
-        
         res.status(200).json(credit);
     });
     
@@ -46,11 +45,14 @@ function fetchDebitAccount(req, res){
     var token = req.headers['x-access-token'];
     jwt.verify(token, config.secret, function(err, decodedObj){
         if (err){
-            return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });  
+            return res.status(500).send({ 
+                auth: false, message: 'Failed to authenticate token.' 
+            });  
         } 
-        let username = decodedObj.username;
+        let userName = decodedObj.username;
+        let debit;
         try{
-            let debit = getDebitPath(userName);
+            debit = getDebitPath(userName);
         }
         catch(err)
         {
