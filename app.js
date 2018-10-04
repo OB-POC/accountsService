@@ -9,6 +9,7 @@ try
     const bodyParser = require("body-parser");
     var morgan = require('morgan');
     const logger = require('./applogger');
+    var cors = require('cors');
     /* 
     *routing dependencies
     */
@@ -22,6 +23,8 @@ try
     /* 
     *middleware configuration
     */
+    app.use(cors());
+
     app.use('',function(req,res,next){
         //logger.debug("middleware configuration are setted");
         next();

@@ -44,8 +44,9 @@ function fetchCreditAccounts(req, res, next){
 
 function fetchDebitAccount(req, res){
     let userName = "alice";
+    let debit;
     try{
-        let debit = getDebitPath(userName);
+        debit = getDebitPath(userName);
     }
     catch(err)
     {
