@@ -15,14 +15,20 @@ const logger = require('./../applogger');
 router.get('/credit',fetchCreditAccounts);
 router.get('/debit',fetchDebitAccount);
 
-function fetchCreditAccounts(req, res){
+function fetchCreditAccounts(req, res, next){
     var token = req.headers['x-access-token'];
-    console.log(req.headers, config.secret);
+
     jwt.verify(token, config.secret , function(err, decodedObj){
-        if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' }); 
+        if (err) 
+        {
+            return res.status(500).send({ 
+                auth: false, message: 'Failed to authenticate token.' 
+            })
+        };
         let username = decodedObj.username;
+        let credit;
         try{
-            let credit = getCreditPath(userName);
+            credit = getCreditPath(userName);
         }
         catch(err)
         {
