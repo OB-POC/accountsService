@@ -1,5 +1,5 @@
 'use strict';
-/* 
+/*
 *module dependencies
 */
 //var multer = require('multer');
@@ -16,19 +16,19 @@ router.get('/credit',fetchCreditAccounts);
 router.get('/debit',fetchDebitAccount);
 
 function fetchCreditAccounts(req, res, next){
-    var token = req.headers['x-acces-token'];
+    var token = req.headers['x-access-token'];
 
     jwt.verify(token, config.secret , function(err, decodedObj){
-        if (err) 
+        if (err)
         {
-            return res.status(500).send({ 
-                auth: false, message: 'Failed to authenticate token.' 
+            return res.status(500).send({
+                auth: false, message: 'Failed to authenticate token.'
             })
         };
-        let username = decodedObj.username;
+        let userName = decodedObj.username;
         let credit;
         try{
-            credit = getCreditPath(userName);
+            credit = require('../data/credit/'+userName);
         }
         catch(err)
         {
@@ -36,23 +36,32 @@ function fetchCreditAccounts(req, res, next){
                 errorMsg: 'User data not available'
             });
         }
-        
         res.status(200).json(credit);
     });
-    
+
 }
 
 function fetchDebitAccount(req, res){
-    let userName = "alice";
-    let debit;
-    try{
-        debit = getDebitPath(userName);
-    }
-    catch(err)
-    {
-        res.status(500).send("Invalid username");
-    }
-    res.status(200).json(debit);
+    var token = req.headers['x-access-token'];
+    jwt.verify(token, config.secret, function(err, decodedObj){
+        if (err){
+            return res.status(500).send({
+                auth: false, message: 'Failed to authenticate token.'
+            });
+        }
+        let userName = decodedObj.username;
+        let debit;
+        try{
+            debit = require('../data/debit/'+userName)
+        }
+        catch(err)
+        {
+            res.status(500).json({
+                errorMsg: "User data not available"
+            });
+        }
+        res.status(200).json(debit);
+    });
 }
 
 function getCreditPath(userName){
