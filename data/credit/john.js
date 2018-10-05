@@ -1,29 +1,29 @@
 module.exports = {
-    "username": "alice",
-    "password": "wonderland",
-    "UIN": "UIN-xxxx",
-    "creditScore": 700,
-    "banks": [
+    username: 'john',
+    password: 'doe',
+    UIN: 'UIN-xxxxx',
+    creditScore: 650,
+    banks: [
         {
-            bankName: 'Barclays',
-            bankId: 'BBaarrccllaayyss',
+            bankName: 'Capital One',
+            bankId: 'CCaappiittaall  OOnnee',
             accounts: [
                 {
                     accountType: 'CC',
                     accountNumber: '456789 0123456789',
                     accountTitle: 'Low Rate',
-                    creditLimit: 3000,
-                    availableCredit: 1000,
+                    creditLimit: 4000,
+                    availableCredit: 2000,
                     totalBalanceDue: 2000,
                     minBalanceDue: 500,
                     apr: 35,
-                    dueDate: new Date().setDate(new Date().getDate()+5)                         
+                    dueDate: new Date().setDate(new Date().getDate()+12)                         
                 }
             ]
         },
         {
-            bankName: 'Citi Bank',
-            bankId: 'CCiittii  BBaannkk',
+            bankName: 'Barclays',
+            bankId: 'BBaarrccllaayyss',
             accounts: [
                 {
                     accountType: 'CC',
@@ -33,25 +33,25 @@ module.exports = {
                     availableCredit: 1500,
                     totalBalanceDue: 2500,
                     minBalanceDue: 400,
-                    apr: 25,
-                    dueDate: new Date().setDate(new Date().getDate()+12)                          
+                    apr: 30,
+                    dueDate: new Date().setDate(new Date().getDate()+5)                          
                 }
             ]
         },
         {
-            bankName: 'HSBC',
-            bankId: 'HHSSBBCC',
+            bankName: 'Citi Bank',
+            bankId: 'CCiittii  BBaannkk',
             accounts: [
                 {
                     accountType: 'M',
                     accountNumber: '567890 1234567890',
                     accountTitle: 'Home Loan',
                     minMonthlyPayment: 150,
-                    remainingFullTerm: '2Y 3M',
+                    remainingFullTerm: '1Y 10M',
                     totalBalanceDue: 2000,
                     minBalanceDue: 2000,
                     interestRate: 2.5,
-                    dueDate: new Date().setDate(new Date().getDate()+20)                         
+                    dueDate: new Date().setDate(new Date().getDate()+20)                      
                 }
             ]
         }
