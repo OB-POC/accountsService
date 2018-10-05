@@ -1,5 +1,5 @@
 'use strict';
-/* 
+/*
 *module dependencies
 */
 //var multer = require('multer');
@@ -19,16 +19,16 @@ function fetchCreditAccounts(req, res, next){
     var token = req.headers['x-access-token'];
 
     jwt.verify(token, config.secret , function(err, decodedObj){
-        if (err) 
+        if (err)
         {
-            return res.status(500).send({ 
-                auth: false, message: 'Failed to authenticate token.' 
+            return res.status(500).send({
+                auth: false, message: 'Failed to authenticate token.'
             })
         };
         let userName = decodedObj.username;
         let credit;
         try{
-            credit = getCreditPath(userName);
+            credit = require('../data/credit/'+userName);
         }
         catch(err)
         {
@@ -38,21 +38,21 @@ function fetchCreditAccounts(req, res, next){
         }
         res.status(200).json(credit);
     });
-    
+
 }
 
 function fetchDebitAccount(req, res){
     var token = req.headers['x-access-token'];
     jwt.verify(token, config.secret, function(err, decodedObj){
         if (err){
-            return res.status(500).send({ 
-                auth: false, message: 'Failed to authenticate token.' 
-            });  
-        } 
+            return res.status(500).send({
+                auth: false, message: 'Failed to authenticate token.'
+            });
+        }
         let userName = decodedObj.username;
         let debit;
         try{
-            debit = getDebitPath(userName);
+            debit = require('../data/debit/'+userName)
         }
         catch(err)
         {

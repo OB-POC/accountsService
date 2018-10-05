@@ -5,10 +5,15 @@
 var app = require('../app');
 var debug = require('debug')('dataDisplayApp:server');
 var http = require('http');
+
+const {
+  port: serverPort
+} = require("../config.json");
+
 /* 
 *setting port either from env or fixed
 */
-const port = process.env.PORT || 3001;
+const port = serverPort;
 app.set('port',port);
 /* 
 *starting the server
