@@ -4,54 +4,54 @@ module.exports = {
     UIN: 'UIN-xxxxx',
     creditScore: 650,
     banks: [
-            {
-                "bankName": "BOS",
-                "bankId": "BBOOSS",
-                "accounts": [
-                    {
-                        "accountType": "PCA",
-                        "accountNumber": "678901 23456789",
-                        "accountTitle": "Classic Account",
-                        "standingInst": 300,
-                        "balance": 2300,
-                        "minBalance": 100,
-                        "interestRate": 0 ,
-                        "availableBalance":1900
-                    }
-                ]
-            },
-            {
-                "bankName": "HHSSBBCC",
-                "bankId": "HHSSBBCC",
-                "accounts": [
-                    {
-                        "aaccountType": "PCA",
-                        "accountNumber": "234567 89012345",
-                        "accountTitle": "Platinum Account",
-                        "standingInst": 500,
-                        "balance": 2000,
-                        "minBalance": 100,
-                        "interestRate": 0,
-                        "availableBalance":1400
-                    }
-                ]
-            },
-            {
-                "bankName": "Monzo",
-                "bankId": "Monzo",
-                "accounts": [
-                    {
-                        "accountType": "Savings",
-                        "accountNumber": "345678 90123456",
-                        "accountTitle": "Easy Saver",
-                        "standingInst": 1700,
-                        "balance": 5000,
-                        "minBalance": 300,
-                        "interestRate": 1,
-                        "availableBalance":3000
-                    }
-                ]
-            }
-    
+        {
+            "bankName": "Halifax",
+            "bankId": "HHaalliiffaaxx",
+            "accounts": [
+                {
+                    "accountType": "SB",
+                    "accountNumber": "678901 23456789",
+                    "accountTitle": "Every Day Saver",
+                    "standingInst": 1000,
+                    "balance": 4000,
+                    "minBalance": 500,
+                    "interestRate": 0.20 ,
+                    "availableBalance":2500
+                }
+            ]
+        },
+        {
+            "bankName": "HHSSBBCC",
+            "bankId": "HHSSBBCC",
+            "accounts": [
+                {
+                    "aaccountType": "PCA",
+                    "accountNumber": "234567 89012345",
+                    "accountTitle": "HSBC Advance Bank Account",
+                    "standingInst": 600,
+                    "balance": 3000,
+                    "minBalance": 300,
+                    "interestRate": 0.5,
+                    "availableBalance":2100
+                }
+            ]
+        },
+        {
+            "bankName": "Barclays",
+            "bankId": "BBaarrccllaayyss",
+            "accounts": [
+                {
+                    "accountType": "SB",
+                    "accountNumber": "345678 90123456",
+                    "accountTitle": "Easy Saver",
+                    "standingInst": 400,
+                    "balance": 4000,
+                    "minBalance": 100,
+                    "interestRate": 0.25,
+                    "availableBalance":3500
+                }
+            ]
+        }
+
     ]
 }
