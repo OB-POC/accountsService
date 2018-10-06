@@ -21,11 +21,11 @@ module.exports = {
             ]
         },
         {
-            "bankName": "HHSSBBCC",
+            "bankName": "HSBC",
             "bankId": "HHSSBBCC",
             "accounts": [
                 {
-                    "aaccountType": "PCA",
+                    "accountType": "PCA",
                     "accountNumber": "234567 89012345",
                     "accountTitle": "HSBC Advance Bank Account",
                     "standingInst": 600,
