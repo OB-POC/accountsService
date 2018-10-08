@@ -10,13 +10,13 @@ module.exports = {
             "accounts": [
                 {
                     "accountType": "SB",
-                    "accountNumber": "123456 78901234",
+                    "accountNumber": "XXXXXX XXXX6789",
                     "accountTitle": "Every Day Saver",
-                    "standingInst": 2000,
-                    "balance": 4000,
-                    "minBalance": 1000,
+                    "standingInst": '2,000',
+                    "balance": '4,000',
+                    "minBalance": '1,000',
                     "interestRate": 0.2 ,
-                    "availableBalance":1000
+                    "availableBalance":'1,000'
                 }
             ]
         },
@@ -26,13 +26,13 @@ module.exports = {
             "accounts": [
                 {
                     "accountType": "PCA",
-                    "accountNumber": "234567 89012345",
+                    "accountNumber": "XXXXXX XXXX6123",
                     "accountTitle": "HSBC Advance Bank Account",
-                    "standingInst": 1200,
-                    "balance": 4000,
+                    "standingInst": '1,200',
+                    "balance": '4,000',
                     "minBalance": 200,
-                    "interestRate": 0.5,
-                    "availableBalance":2600
+                    "interestRate": 0.1,
+                    "availableBalance":'2,600'
                 }
             ]
         },
@@ -42,13 +42,13 @@ module.exports = {
             "accounts": [
                 {
                     "accountType": "SB",
-                    "accountNumber": "345678 90123456",
+                    "accountNumber": "XXXXXX XXXX3222",
                     "accountTitle": "Easy Saver",
                     "standingInst": 800,
-                    "balance": 6000,
+                    "balance": '6,000',
                     "minBalance": 200,
                     "interestRate": 0.25,
-                    "availableBalance":5000
+                    "availableBalance":'5,000'
                 }
             ]
         }

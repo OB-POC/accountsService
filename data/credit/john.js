@@ -10,14 +10,14 @@ module.exports = {
             accounts: [
                 {
                     accountType: 'CC',
-                    accountNumber: '456789 0123456789',
+                    accountNumber: 'XXXXXX XXXXXX6789',
                     accountTitle: 'Chase Freedom Unlimited Credit Card',
-                    creditLimit: 3000,
-                    availableCredit: 200,
-                    totalBalanceDue: 2800,
-                    minBalanceDue: 30,
+                    creditLimit: '3,000',
+                    availableCredit: 100,
+                    totalBalanceDue: '2,900',
+                    minBalanceDue: 50,
                     apr: 25.49,
-                    dueDate: new Date().setDate(new Date().getDate()+12)                         
+                    dueDate: new Date().setDate(new Date().getDate()+5)                         
                 }
             ]
         },
@@ -27,32 +27,32 @@ module.exports = {
             accounts: [
                 {
                     accountType: 'CC',
-                    accountNumber: '567890 1234567890',
+                    accountNumber: 'XXXXXX XXXXXX7890',
                     accountTitle: 'Classic Credit Card',
-                    creditLimit: 1200,
-                    availableCredit: 800,
-                    totalBalanceDue: 400,
+                    creditLimit: '4,000',
+                    availableCredit: '2,000',
+                    totalBalanceDue: '2,000',
                     minBalanceDue: 100,
-                    apr: 27.9,
+                    apr: 27.10,
                     dueDate: new Date().setDate(new Date().getDate()+5)                          
                 }
             ]
         },
         {
-            bankName: 'Monzo',
-            bankId: 'MMoonnzzoo',
+            bankName: 'Barclays',
+            bankId: 'BBaarrccllaayyss',
             accounts: [
                 {
                     accountType: 'M',
-                    accountNumber: '567890 1234567890',
-                    accountTitle: 'Home Loan',
-                    minMonthlyPayment: 900,
-                    remainingFullTerm: '0Y 5M',
-                    totalBalanceDue: 6000,
-                    interestRate: 2.9,
-                    dueDate: new Date().setDate(new Date().getDate()+20)                         
+                    accountNumber: 'XXXXXX XXXXXX7890',
+                    accountTitle: '2 Years Fixed Reward',
+                    minMonthlyPayment: '2,000',
+                    remainingFullTerm: '2Y 1M',
+                    totalBalanceDue: '50,000',
+                    interestRate: 3.3,
+                    dueDate: new Date().setDate(new Date().getDate()+5)                         
                 }
             ]
         }
-    ]
+    ]   
 }

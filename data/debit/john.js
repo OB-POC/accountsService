@@ -10,29 +10,29 @@ module.exports = {
             "accounts": [
                 {
                     "accountType": "SB",
-                    "accountNumber": "678901 23456789",
+                    "accountNumber": "XXXXXX XXXX6789",
                     "accountTitle": "Every Day Saver",
-                    "standingInst": 1000,
-                    "balance": 4000,
-                    "minBalance": 500,
+                    "standingInst": '1,000',
+                    "balance": '2,100',
+                    "minBalance": 100,
                     "interestRate": 0.20 ,
-                    "availableBalance":2500
+                    "availableBalance":'1,000'
                 }
             ]
         },
         {
-            "bankName": "HSBC",
+            "bankName": "HHSSBBCC",
             "bankId": "HHSSBBCC",
             "accounts": [
                 {
-                    "accountType": "PCA",
-                    "accountNumber": "234567 89012345",
+                    "aaccountType": "PCA",
+                    "accountNumber": "XXXXXX XXXX2345",
                     "accountTitle": "HSBC Advance Bank Account",
                     "standingInst": 600,
-                    "balance": 3000,
-                    "minBalance": 300,
-                    "interestRate": 0.5,
-                    "availableBalance":2100
+                    "balance": '4,000',
+                    "minBalance": 200,
+                    "interestRate": 0.10,
+                    "availableBalance":'3,200'
                 }
             ]
         },
@@ -42,13 +42,13 @@ module.exports = {
             "accounts": [
                 {
                     "accountType": "SB",
-                    "accountNumber": "345678 90123456",
+                    "accountNumber": "XXXXXX XXXX3456",
                     "accountTitle": "Easy Saver",
-                    "standingInst": 400,
-                    "balance": 4000,
-                    "minBalance": 100,
+                    "standingInst": 200,
+                    "balance": '1,500',
+                    "minBalance": 200,
                     "interestRate": 0.25,
-                    "availableBalance":3500
+                    "availableBalance":'1,100'
                 }
             ]
         }
