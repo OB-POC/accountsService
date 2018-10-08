@@ -21,7 +21,7 @@ function fetchCreditAccounts(req, res, next){
     jwt.verify(token, config.secret , function(err, decodedObj){
         if (err)
         {
-            return res.status(500).send({
+            return res.status(401).send({
                 auth: false, message: 'Failed to authenticate token.'
             })
         };
@@ -45,7 +45,7 @@ function fetchDebitAccount(req, res){
     var token = req.headers['x-access-token'];
     jwt.verify(token, config.secret, function(err, decodedObj){
         if (err){
-            return res.status(500).send({
+            return res.status(401).send({
                 auth: false, message: 'Failed to authenticate token.'
             });
         }

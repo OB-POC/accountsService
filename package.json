@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node ./bin/www",
-    "test": "echo \"Error: no test specified\""
+    "test": "node ./node_modules/mocha/bin/mocha"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,9 @@
     "log4js": "^3.0.5",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.4",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "supertest": "^3.3.0",
     "nvm": "0.0.4"
   }
 }
