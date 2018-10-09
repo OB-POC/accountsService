@@ -21,7 +21,7 @@ module.exports = {
             ]
         },
         {
-            "bankName": "HHSSBBCC",
+            "bankName": "HSBC",
             "bankId": "HHSSBBCC",
             "accounts": [
                 {
