@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node ./bin/www",
+    "serve": "NODE_ENV=PRO node ./bin/www",
     "test": "node ./node_modules/mocha/bin/mocha"
   },
   "author": "",
