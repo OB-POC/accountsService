@@ -33,7 +33,7 @@ try {
     }));
     app.use(bodyParser.json());
 
-    app.use(process.env.NODE_ENV == "PRO" ? '/accountsService' : "/", accountRoutes)
+    app.use("/accountsService", accountRoutes)
 
     module.exports = app;
 } catch (err) {
