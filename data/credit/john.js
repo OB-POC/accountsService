@@ -5,25 +5,25 @@ module.exports = {
     creditScore: 650,
     banks: [
         {
-            bankName: 'JP Morgan Chase',
-            bankId: 'JJPP  MMoorrggaann  CChhaassee',
+            bankName: 'NatWest',
+            bankId: 'NNaattWWeesstt',
             accounts: [
                 {
                     accountType: 'CC',
                     accountNumber: 'XXXXXX XXXXXX6789',
-                    accountTitle: 'Chase Freedom Unlimited Credit Card',
+                    accountTitle: 'Reward Black Credit Card',
                     creditLimit: '3,000',
-                    availableCredit: 100,
-                    totalBalanceDue: '2,900',
-                    minBalanceDue: 50,
-                    apr: 25.49,
+                    availableCredit: '1,200',
+                    totalBalanceDue: '1,800',
+                    minBalanceDue: 30,
+                    apr: 37.10,
                     dueDate: new Date().setDate(new Date().getDate()+5)                         
                 }
             ]
         },
         {
-            bankName: 'Bank of Scotland',
-            bankId: 'BBaannkk  ooff  SSccoottllaanndd',
+            bankName: 'RBS',
+            bankId: 'RRBBSS',
             accounts: [
                 {
                     accountType: 'CC',
@@ -46,8 +46,8 @@ module.exports = {
                     accountType: 'M',
                     accountNumber: 'XXXXXX XXXXXX7890',
                     accountTitle: '2 Years Fixed Reward',
-                    minMonthlyPayment: '2,000',
-                    remainingFullTerm: '2Y 1M',
+                    minMonthlyPayment: '800',
+                    remainingFullTerm: '5Y 3M',
                     totalBalanceDue: '50,000',
                     interestRate: 3.3,
                     dueDate: new Date().setDate(new Date().getDate()+5)                         
