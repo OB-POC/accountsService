@@ -13,10 +13,10 @@ module.exports = {
                     accountNumber: 'XXXXXX XXXXXX6789',
                     accountTitle: 'Reward Black Credit Card',
                     creditLimit: '3,000',
-                    availableCredit: '1,200',
-                    totalBalanceDue: '1,800',
-                    minBalanceDue: 30,
-                    apr: 37.10,
+                    availableCredit: '100',
+                    totalBalanceDue: '2,900',
+                    minBalanceDue: 50,
+                    apr: 23.70,
                     dueDate: new Date().setDate(new Date().getDate()+5)                         
                 }
             ]
