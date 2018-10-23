@@ -6,7 +6,7 @@ module.exports = {
             noOfCreditAccounts: 3,
             totalAvailableDebitBalance: '8,600',
             totalAvailableCreditBalance: '3,800',
-            savingsOnBestMatch: '4,627.60'
+            savingsOnBestMatch: '6,962.56'
         },
         {
             username: 'john',
@@ -14,7 +14,7 @@ module.exports = {
             noOfCreditAccounts: 3,
             totalAvailableDebitBalance: '4,800',
             totalAvailableCreditBalance: '5,700',
-            savingsOnBestMatch: '149'
+            savingsOnBestMatch: '367.2'
         }
     ]
 }
