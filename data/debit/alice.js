@@ -16,7 +16,8 @@ module.exports = {
                     "balance": '4,000',
                     "minBalance": '1,000',
                     "interestRate": 0.2 ,
-                    "availableBalance":'1,000'
+                    "availableBalance":'1,000',
+                    "customizedMinBalance":'1,000'
                 }
             ]
         },
@@ -32,7 +33,9 @@ module.exports = {
                     "balance": '4,000',
                     "minBalance": 200,
                     "interestRate": 0.1,
-                    "availableBalance":'2,600'
+                    "availableBalance":'2,600',
+                    "customizedMinBalance":'2,000'
+                    
                 }
             ]
         },
@@ -48,7 +51,9 @@ module.exports = {
                     "balance": '6,000',
                     "minBalance": 200,
                     "interestRate": 0.25,
-                    "availableBalance":'5,000'
+                    "availableBalance":'5,000',
+                    "customizedMinBalance":'2,000'
+                    
                 }
             ]
         }
