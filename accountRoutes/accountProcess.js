@@ -9,7 +9,7 @@ var router = express.Router();
 router.get('/credit', fetchCreditAccounts);
 router.get('/debit', fetchDebitAccount);
 router.get('/totalBalances', fetchTotalBalances);
-router.put('/customizedMinBalance',saveCustomizedMinBalance);
+router.patch('/customizedMinBalance',saveCustomizedMinBalance);
 
 
 
@@ -99,7 +99,7 @@ function saveCustomizedMinBalance(req, res) {
     var customizedMinBalance = req.body.customizedMinBalance;
 
     console.log(req.body);
-    jwt.verify(token, config.secret, function (err, decodedObj) {
+    jwt.verify(token, secret, function (err, decodedObj) {
         if (err) {
             return res.status(401).send({
                 auth: false,
@@ -109,7 +109,7 @@ function saveCustomizedMinBalance(req, res) {
         let userName = decodedObj.username;
         
         // fetching of file details
-        fs.readFile('./data/debit/'+userName+'.json',function(error,success)
+        request.get(`${serviceUrls.dbUrl}/${userName}-debit`,function(error,response,body)
         {
             if(error)
             {
@@ -117,7 +117,7 @@ function saveCustomizedMinBalance(req, res) {
                     message: 'Internal server error. Failed to connect to DB'
                 });
             }
-            var userDebitAccountDetails=JSON.parse(success);
+            var userDebitAccountDetails=JSON.parse(body);
 
             // getting index of bank
             var bankDetails =[]; 
@@ -129,6 +129,7 @@ function saveCustomizedMinBalance(req, res) {
                 }
             }
 
+            console.log(JSON.stringify(bankDetails));
             // getting index of account of specific bank
             if(bankDetails.length === 1){
                 var accountDetails =[];
@@ -140,22 +141,30 @@ function saveCustomizedMinBalance(req, res) {
                     }
                 }
 
+                console.log(JSON.stringify(accountDetails));
+
                 // making change into the 'customizedMinBalance' key of selected account of a bank
                 if(accountDetails.length === 1 ){
                     userDebitAccountDetails.banks[bankDetails[0].index]
                                         .accounts[accountDetails[0].index]
                                         .customizedMinBalance = customizedMinBalance;
                     
-                    var data = JSON.stringify(userDebitAccountDetails);
-
+                    var data =userDebitAccountDetails;
+                    console.log(JSON.stringify(data),'data');                        
+                    
                     // saving into the file
-                    fs.writeFile(path.join('./data/debit/'+userName+'.json'),data,function(err){
+                    request.patch({
+                        url: serviceUrls.dbUrl +'/'+userName+'-debit',
+                        body : data,
+                        json : true
+                      },function(err,response,body){
                         if(err){
                             return res.status(500).send({
                                 message: 'Internal server error. Failed to save to DB'
                             });
                         }
-                        res.status(200).send(userDebitAccountDetails);
+                        console.log(JSON.stringify(body),'modified data dupe');                        
+                        res.status(200).json(body);
                         
                     });
                 }
